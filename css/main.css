@@ -1,0 +1,101 @@
+/* ------------------------------------------------------------
+  general styles
+------------------------------------------------------------ */
+
+#mfPreviewBar { display:none; } /* hide myfonts.net topbar (trial account for showcase) */
+
+/*
+font-family: 'Futura BT Pro Medium', Arial, sans-serif;
+font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+
+font-family: 'Futura BT Pro Bold'
+font-family: 'Futura BT Pro Book'
+font-family: 'Futura BT Pro Light'
+font-family: 'Futura BT Pro Medium'
+*/
+
+
+
+
+
+
+
+html,
+body {
+  height:100%;
+  min-height:100%;
+}
+
+html {
+  font-size:10px;
+  box-sizing:border-box;
+}
+body {
+  font:1.6rem/1.4 'Open Sans', Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color:#fff;
+  background:linear-gradient(135deg, #5a50b6 0%,#6dd8c6 100%);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing:inherit;
+}
+
+
+
+img {
+  max-width:100%;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #c80320;
+    text-shadow: none;
+}
+
+::selection {
+    color: #fff;
+    background: #c80320;
+    text-shadow: none;
+}
+
+input::-moz-selection,
+textarea::-moz-selection {
+    color: #fff;
+    background: #c80320;
+    text-shadow: none;
+}
+
+input::selection,
+textarea::selection {
+    color: #fff;
+    background: #c80320;
+    text-shadow: none;
+}
+
+
+
+
+h1 {
+    font:3.2rem/1.4 'Futura BT Pro Medium', Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+  media queries
+------------------------------------------------------------ */
+
+@media only screen and (min-width: 35em) {
+
+}
