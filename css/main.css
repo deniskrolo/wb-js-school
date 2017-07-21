@@ -58,46 +58,99 @@ textarea::selection {
 
 
 
-
-
-
-
-
-
-
-/* ==========================================================================
-   layout
-   ========================================================================== */
+/* --------------------
+	layout
+--------------------- */
 body {
   display:flex;
   flex-wrap:wrap;
 }
 
-.about-section { order:1; }
+.page-section--about { order:1; }
 .page-header { order:2; }
-.devs-section { order:3; }
-.join-us-section { order:4; }
+.page-section--devs { order:3; }
+.page-section--join { order:4; }
 .page-footer { order:5; }
 
 
-/* ----- text ----- */
+.page-section {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  padding:4rem 2rem;
+}
+
+
+
+/* --------------------
+	text
+--------------------- */
 h1 {
-  margin-bottom:1em;
-  font:2.8rem/1 'Futura BT Pro Medium', Arial, sans-serif;
+  margin-bottom:1.5em;
+  text-align:center;
+  font:3.2rem/1 'Futura BT Pro Medium', Arial, sans-serif;
+}
+h2 {
+  margin-bottom:.5em;
+  font:700 1.6rem/1 'Open Sans', Arial, sans-serif;
+}
+p { margin-bottom:1em; }
+
+
+
+/* --------------------
+	forms
+--------------------- */
+::-webkit-input-placeholder { color:#888; }
+::-moz-placeholder { color:#888; }
+:-ms-input-placeholder { color:#888; }
+:-moz-placeholder { color:#888; }
+
+.form li { margin-bottom:1.5rem; }
+.form li:last-child { margin-bottom:0; }
+
+.form input[type=text],
+.form input[type=email],
+.form textarea {
+  outline:none;
+  width:100%;
+  padding:1em;
+  text-align:center;
+  font:1.4rem/1.2 'Open Sans', Arial, sans-serif;
+  border:2px solid #a6a6a6;
+  color:#000;
+  background-color:#fff;
+  transition:.3s ease;
+}
+.form textarea {
+  resize:vertical;
+  height:10rem;
 }
 
-p {
-  margin-bottom:1em;
+.form input[type=text]:hover,
+.form input[type=email]:hover,
+.form textarea:hover { border-color:#fff; }
+
+.form input[type=text]:focus,
+.form input[type=email]:focus,
+.form textarea:focus {
+  border-color:#fff;
+  box-shadow:inset 0 2px 7px rgba(0,0,0,.15);
 }
 
 
 
-/* ----- buttons ----- */
+/* --------------------
+	buttons
+--------------------- */
 .btn {
   outline:none;
   cursor:pointer;
   display:inline-block;
-  padding:.9em 2em;
+  padding:.8em 1.5em;
   text-align:center;
   text-transform:uppercase;
   font:1.8rem/1 'Futura BT Pro Medium', Arial, sans-serif;
@@ -119,12 +172,20 @@ p {
 
 
 
-/* --------------------
-	page header
---------------------- */
+/* ------------------------------------------------------------
+  header
+------------------------------------------------------------ */
 .page-header {
   width:100%;
   background-color:#000;
+}
+
+.page-header.is-fixed {
+  z-index:9999;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
 }
 
 .page-header__nav {
@@ -147,52 +208,138 @@ p {
 
 
 
-/* --------------------
-	about section
---------------------- */
-.about-section {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-  width:100%;
+/* ------------------------------------------------------------
+  about
+------------------------------------------------------------ */
+.page-section--about {
   min-height:calc(100vh - 5rem);
-  padding:0 2rem;
+  padding:2rem;
   text-align:center;
-  background:linear-gradient(135deg, rgba(90,80,182,.75) 0%, rgba(109,216,198,.75) 100%),
-              url(../assets/hero-background-photo.jpg) no-repeat 50% 50% / cover;
+  background:fixed linear-gradient(135deg, rgba(90,80,182,.75) 0%, rgba(109,216,198,.75) 100%),
+              fixed url(../assets/hero-background-photo.jpg) no-repeat 50% 50% / cover;
 }
 
-.about-section__logo {
+.page-section--about__logo {
+  display:inline-block;
   width:80%;
   max-width:42rem;
   height:auto;
-  margin-bottom:2em;
+  margin-bottom:3em;
 }
 
-
-.about-section__text { max-width:70rem; }
-.about-section__text h1 {
+.page-section--about__text { max-width:70rem; }
+.page-section--about__text h1 {
   white-space:nowrap;
+  margin-bottom:0;
   font-size:3.2rem;
 }
-.about-section__text h1 span {
-  position:relative;
-  top:.45em;
+.page-section--about__text h1 span {
   display:inline-block;
   width:1.7em;
   height:1.7em;
+  margin-bottom:-.5em;
   background:url(../assets/js-logo.svg) no-repeat 50% 50% / contain;
   text-indent:500%;
   white-space:nowrap;
   overflow:hidden;
 }
-.about-section__text p { margin:3em 0 1.5em 0; }
-.about-section__text .btn {
+.page-section--about__text p { margin:3em 0 1.5em 0; }
+.page-section--about__text .btn {
   width:80%;
   max-width:35rem;
 }
+
+
+
+/* ------------------------------------------------------------
+  devs
+------------------------------------------------------------ */
+.page-section--devs {
+  text-align:center;
+  background:fixed linear-gradient(135deg, rgba(90,80,182,.75) 0%, rgba(109,216,198,.75) 100%),
+              fixed url(../assets/devs-background-photo.jpg) no-repeat 50% 50% / cover;
+}
+
+.devs-person {
+  display:flex;
+  flex-direction:column;
+  margin-bottom:4rem;
+}
+.devs-person:last-child { margin-bottom:0; }
+
+.devs-person__photo {
+  overflow:hidden;
+  display:inline-block;
+  width:10rem;
+  height:10rem;
+  margin:0 auto 2rem auto;
+  border-radius:100%;
+}
+
+.devs-person__info p { font-size:1.3rem; }
+
+
+
+/* ------------------------------------------------------------
+  join us
+------------------------------------------------------------ */
+.page-section--join {
+  text-align:center;
+  background:linear-gradient(135deg, #847dc9 0%, #92e2d5 100%);
+}
+.page-section--join .page-section__inner {
+  width:100%;
+  max-width:50rem;
+}
+
+.page-section--join h1 { white-space:nowrap; }
+.page-section--join h1::before,
+.page-section--join h1::after {
+  content:"";
+  opacity:.5;
+  display:inline-block;
+  width:1.8em;
+  height:1.8em;
+  margin-bottom:-.6em;
+  background:url(../assets/hex-icon.svg) no-repeat 50% 50% / contain;
+}
+.page-section--join h1::before { margin-right:.6em; }
+.page-section--join h1::after { margin-left:.6em; }
+
+
+
+.page-section--join .btn {
+  width:100%;
+}
+
+
+/* ------------------------------------------------------------
+  footer
+------------------------------------------------------------ */
+.page-footer {
+  width:100%;
+  padding:2rem;
+  text-align:center;
+  background-color:#000;
+}
+
+.page-footer__logo {
+  display:block;
+  width:7rem;
+  height:auto;
+  margin:0 auto 1rem auto;
+}
+
+.page-footer__copyright {
+  display:block;
+  font-size:1.1rem;
+}
+
+
+
+
+
+
 
 
 
