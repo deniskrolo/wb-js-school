@@ -31,29 +31,27 @@ img {
 }
 
 ::-moz-selection {
-    color: #fff;
-    background: #c80320;
-    text-shadow: none;
+  color:#fff;
+  background:#847dc9;
+  text-shadow:none;
 }
-
 ::selection {
-    color: #fff;
-    background: #c80320;
-    text-shadow: none;
+  color:#fff;
+  background:#847dc9;
+  text-shadow:none;
 }
 
 input::-moz-selection,
 textarea::-moz-selection {
-    color: #fff;
-    background: #c80320;
-    text-shadow: none;
+  color:#fff;
+  background:#847dc9;
+  text-shadow:none;
 }
-
 input::selection,
 textarea::selection {
-    color: #fff;
-    background: #c80320;
-    text-shadow: none;
+  color:#fff;
+  background:#847dc9;
+  text-shadow:none;
 }
 
 
@@ -148,12 +146,17 @@ p { margin-bottom:1em; }
 	buttons
 --------------------- */
 .btn {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
   outline:none;
   cursor:pointer;
   display:inline-block;
   padding:.8em 1.5em;
   text-align:center;
   text-transform:uppercase;
+  text-decoration:none;
   font:1.8rem/1 'Futura BT Pro Medium', Arial, sans-serif;
   border:none;
   color:#000;
@@ -177,6 +180,10 @@ p { margin-bottom:1em; }
   header
 ------------------------------------------------------------ */
 .page-header {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
   z-index:1;
   position:relative;
   width:100%;
@@ -225,9 +232,9 @@ p { margin-bottom:1em; }
 }
 
 .page-header__nav a:hover { color:#66c7c3; }
-.page-header__nav .is-active a::after {
-  right:1.8rem;
-}
+
+.page-header__nav .is-active a { color:#fff; }
+.page-header__nav .is-active a::after { right:1.8rem; }
 
 
 
@@ -235,19 +242,21 @@ p { margin-bottom:1em; }
   about
 ------------------------------------------------------------ */
 .page-section--about {
-  padding:2rem;
+  padding:4rem 2rem 8rem 2rem;
   text-align:center;
   background:fixed linear-gradient(135deg, rgba(90,80,182,.75) 0%, rgba(109,216,198,.75) 100%),
               fixed url(../assets/hero-background-photo.jpg) no-repeat 50% 50% / cover;
 }
-.page-section--about .page-section__inner { margin-top:-5rem; }
 
 .page-section--about__logo {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
   display:inline-block;
-  width:80%;
-  max-width:42rem;
+  width:22rem;
   height:auto;
-  margin-bottom:3em;
+  margin-bottom:4rem;
 }
 
 .page-section--about__text { max-width:70rem; }
@@ -278,28 +287,36 @@ p { margin-bottom:1em; }
   devs
 ------------------------------------------------------------ */
 .page-section--devs {
-  text-align:center;
   background:fixed linear-gradient(135deg, rgba(90,80,182,.75) 0%, rgba(109,216,198,.75) 100%),
               fixed url(../assets/devs-background-photo.jpg) no-repeat 50% 50% / cover;
+}
+
+.devs {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
 }
 
 .devs-person {
   display:flex;
   flex-direction:column;
-  margin-bottom:4rem;
+  align-items:center;
+  margin-bottom:6rem;
+  text-align:center;
 }
 .devs-person:last-child { margin-bottom:0; }
 
 .devs-person__photo {
   overflow:hidden;
   display:inline-block;
-  width:10rem;
+  min-width:10rem;
   height:10rem;
   margin:0 auto 2rem auto;
   border-radius:100%;
 }
 
 .devs-person__info p { font-size:1.3rem; }
+.devs-person__info p:last-child { margin-bottom:0; }
 
 
 
@@ -372,6 +389,128 @@ p { margin-bottom:1em; }
    media queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+
+/* ---------- 520 px ---------- */
+@media only screen and (min-width: 520px) {
+
+  .devs {
+    flex-direction:row;
+    flex-wrap:wrap;
+    max-width:120rem;
+    margin:0 -2rem;
+  }
+  .devs-person {
+    width:50%;
+    padding:0 2rem;
+  }
+
+}
+
+
+/* ---------- 620 px ---------- */
+@media only screen and (min-width: 620px) {
+
+  body { font-size:1.6rem; }
+  h1 {
+    margin-bottom:1em;
+    font-size:4.2rem;
+  }
+  h2 { font-size:1.8rem; }
+
+  .btn {
+    padding:.9em 2em;
+    font-size:2rem;
+  }
+  .form input[type=text],
+  .form input[type=email],
+  .form textarea { font-size:1.6rem; }
+
+  .page-section { padding-top:9rem; }
+  .page-section--about {
+    padding-top:4rem;
+    padding-bottom:9rem;
+  }
+
+  .page-header { margin-top:-6rem; }
+  .page-header__nav ul {
+    height:6rem;
+    font-size:2.4rem;
+  }
+  .page-header__nav a::after { height:4px; }
+
+  .page-section--about__logo {
+    width:30rem;
+    margin-bottom:6rem;
+  }
+  .page-section--about__text h1 { font-size:4.8rem; }
+
+  .devs-person__info p { font-size:1.4rem; }
+
+  .page-footer { padding:3rem 2rem; }
+  .page-footer__logo { width:10rem; }
+  .page-footer__copyright { font-size:1.2rem; }
+
+}
+
+
+/* ---------- 860 px ---------- */
+@media only screen and (min-width: 860px) {
+
+  body { font-size:1.8rem; }
+  h1 { font-size:5.6rem; }
+
+  .btn { padding:1em 2em; }
+
+  .page-header__nav ul { font-size:2.6rem; }
+
+  .page-section--about__logo {
+    width:38rem;
+    margin-bottom:8rem;
+  }
+  .page-section--about__text h1 { font-size:6.2rem; }
+  .page-section--about__text p { margin:4em 0 2em 0; }
+
+  .devs-person {
+    flex-direction:row;
+    margin-bottom:6rem;
+    text-align:left;
+  }
+  .devs-person__photo { margin:0; }
+  .devs-person__info { padding-left:2rem; }
+
+  .page-footer__logo { width:12rem; }
+
+}
+
+
+/* ---------- 1200 px ---------- */
+@media only screen and (min-width: 1200px) {
+
+  h1 { font-size:6.4rem; }
+
+  .page-section { padding-top:12rem; }
+  .page-section--about {
+    padding-top:4rem;
+    padding-bottom:12rem;
+  }
+
+  .page-header { margin-top:-8rem; }
+  .page-header__nav ul {
+    height:8rem;
+    font-size:3.6rem;
+  }
+
+  .page-section--about__logo {
+    width:42rem;
+    margin-bottom:10rem;
+  }
+  .page-section--about__text h1 { font-size:7.2rem; }
+  .page-section--about__text p { margin:5em 0 2.5em 0; }
+
+  .devs-person { padding:0 4rem; }
+  .devs-person__info { padding-left:3rem; }
+  .devs-person__info p { font-size:1.6rem; }
+
+  .page-footer__logo { width:14rem; }
 
 }
