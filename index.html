@@ -16,27 +16,29 @@
       <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
       <meta name="theme-color" content="#ffffff">
 
+      <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+      <script type="text/javascript">
+          (function() {
+              var path = '//easy.myfonts.net/v2/js?sid=575(font-family=Futura+BT+Pro+Bold)&sid=313024(font-family=Futura+BT+Pro+Book)&sid=313029(font-family=Futura+BT+Pro+Light)&sid=313031(font-family=Futura+BT+Pro+Medium)&key=ejoJD3VTgR',
+                  protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+                  trial = document.createElement('script');
+              trial.type = 'text/javascript';
+              trial.async = true;
+              trial.src = protocol + path;
+              var head = document.getElementsByTagName("head")[0];
+              head.appendChild(trial);
+          })();
+      </script>
 
+      <!-- css -->
       <link rel="stylesheet" href="css/reset.css">
       <link rel="stylesheet" href="css/main.css">
-
-      <!-- mfonts.net futura font -->
-      <script type="text/javascript">
-        (function() {
-            var path = '//easy.myfonts.net/v2/js?sid=575(font-family=Futura+BT+Pro+Bold)&sid=313024(font-family=Futura+BT+Pro+Book)&sid=313029(font-family=Futura+BT+Pro+Light)&sid=313031(font-family=Futura+BT+Pro+Medium)&key=ejoJD3VTgR',
-                protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-                trial = document.createElement('script');
-            trial.type = 'text/javascript';
-            trial.async = true;
-            trial.src = protocol + path;
-            var head = document.getElementsByTagName("head")[0];
-            head.appendChild(trial);
-        })();
-    </script>
-
+      <link rel="stylesheet" href="css/responsive.css">
   </head>
   <body>
+
+    <!-- page header -->
     <header role="banner" class="page-header">
       <nav role="navigation" class="page-header__nav">
         <ul>
@@ -46,14 +48,14 @@
         </ul>
       </nav>
     </header>
-
+    <!-- end of page header -->
 
     <!-- about section -->
     <section id="about" class="page-section page-section--about">
       <div class="page-section__inner">
-        <a href="index.html" class="page-section--about__logo">
-          <img src="assets/webburza-js-school-logo.svg" alt="web.burza JS school" />
-        </a>
+        <header>
+          <a href="index.html" class="page-section--about__logo"><img src="assets/webburza-js-school-logo.svg" alt="web.burza JS school" /></a>
+        </header>
         <article class="page-section--about__text">
           <h1>Enter <span>Javascript</span> School</h1>
           <p>Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor.</p>
@@ -155,22 +157,17 @@
     </section>
     <!-- end of join us section -->
 
-
+    <!-- page footer -->
     <footer role="contentinfo" class="page-footer">
       <a href="https://web.burza.hr/" class="page-footer__logo">
         <img src="assets/webburza-logo.svg" alt="web.burza - digital agency" />
       </a>
       <small class="page-footer__copyright">Copyright &mdash; 2017</small>
     </footer>
+    <!-- end of page footer -->
 
-
-
-      <!--
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-      -->
-
-      <script src="js/jquery-1.11.2.min.js"></script>
-      <script src="js/main.js"></script>
+    <!-- javascript/jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
