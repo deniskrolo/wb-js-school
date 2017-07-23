@@ -163,6 +163,43 @@ a:active { text-decoration:none; }
 }
 
 
+/* form messages */
+.form__messages:empty { display:none; }
+.form__messages {
+  position:relative;
+  margin-bottom:2rem;
+  padding:1.5rem 1.5rem 1.5rem 5.5rem;
+  text-align:left;
+  border-left:4px solid #fff;
+  color:#000;
+  background-color:rgba(255,255,255,.7);
+}
+.form__messages::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:1rem;
+  transform:translateY(-50%);
+  display:inline-block;
+  width:3rem;
+  height:3rem;
+}
+
+.form__messages--error {
+  color:#e31212;
+  border-color:#e31212;
+  background-color:#f8dbd6;
+}
+.form__messages--error::before { background:url(../assets/error-icon.svg) no-repeat 50% 50% / contain; }
+
+.form__messages--success {
+  color:#337811;
+  border-color:#3e8f16;
+  background-color:#e9fbe0;
+}
+.form__messages--success::before { background:url(../assets/success-icon.svg) no-repeat 50% 50% / contain; }
+
+
 
 /* ----- buttons --------------- */
 .btn {

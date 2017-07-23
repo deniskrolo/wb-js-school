@@ -145,14 +145,16 @@
           <h1>join us</h1>
         </header>
 
-        <form class="form">
+        <form class="form" id="ajax-contact" method="post" action="scripts/mailer.php">
+          <p id="form-messages" class="form__messages"></p>
           <ul>
-            <li><input type="text" id="name" placeholder="Write your name" required /></li>
-            <li><input type="email" id="email" placeholder="What's your email" required /></li>
-            <li><textarea placeholder="Write something nice about us..." required></textarea></li>
-            <li><input type="submit" value="Join us!" class="btn" /></li>
+            <li><input type="text" id="name" name="name" placeholder="Write your name" required /></li>
+            <li><input type="email" id="email" name="email" placeholder="What's your email" required /></li>
+            <li><textarea id="message" name="message" placeholder="Write something nice about us..." required></textarea></li>
+            <li><button type="submit" class="btn">Join us!</button></li>
           </ul>
         </form>
+
       </div>
     </section>
     <!-- end of join us section -->
@@ -166,8 +168,9 @@
     </footer>
     <!-- end of page footer -->
 
-    <!-- javascript/jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/form-submit.js"></script>
   </body>
 </html>
